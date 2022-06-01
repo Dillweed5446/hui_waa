@@ -8,6 +8,7 @@ import { Geocode_configService } from '../../config/geocode_config/geocode_confi
 export class GoogleGeocodeService {
 
   public setAddress(location: string): void {
+    //TODO: location names need to be separated by %20 (modulo 20 represent spaces in url)
     this.geo.setAddress(location);
   }
 
