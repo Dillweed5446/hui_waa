@@ -17,6 +17,11 @@ export class LocationInputComponent implements OnInit {
 
   constructor() { }
 
+  public submitLocation(): void {
+    // TODO: Below is basic, and doesn't do anything.  Once location service api is setup, use this to submit location to service.
+    this.locationInputString ? this.locationName : this.locationLatLong;
+  }
+
   ngOnInit() {
   }
 

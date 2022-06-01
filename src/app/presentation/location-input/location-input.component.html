@@ -8,9 +8,21 @@
     <mat-radio-button class="radio-button" [value]="true">Location Name</mat-radio-button>
     <mat-radio-button class="radio-button" [value]="false">Location Latitude and Longitude</mat-radio-button>
   </mat-radio-group>
-  <input type="text" label="Location Name" *ngIf="locationInputString" [(ngModel)]="locationName">
-  <ng-container *ngIf="!locationInputString">
-    <input type="number" label="Location Latitude" [(ngModel)]="locationLatLong.lat">
-    <input type="number" label="Location Longitude" [(ngModel)]="locationLatLong.long">
-  </ng-container>
+  <form id="location-form">
+    <mat-form-field class="location-input" appearance="fill" *ngIf="locationInputString" >
+      <mat-label>Location Name</mat-label>
+      <input matInput type="text" label="Location Name" [(ngModel)]="locationName" [value]="locationName">
+    </mat-form-field>
+      <ng-container *ngIf="!locationInputString">
+        <mat-form-field class="location-input" appearance="fill">
+            <mat-label>Latitude</mat-label>
+            <input matInput type="number" label="Location Latitude" [(ngModel)]="locationLatLong.lat" [value]="locationLatLong.lat">
+        </mat-form-field>
+          <mat-form-field class="location-input" appearance="fill">
+            <mat-label>Longitude</mat-label>
+            <input matInput type="number" label="Location Longitude" [(ngModel)]="locationLatLong.long" [value]="locationLatLong.long">
+        </mat-form-field>
+      </ng-container>
+  </form>
+  <button mat-raised-button id="submit" (click)="submitLocation()">Submit</button>
 </div>
