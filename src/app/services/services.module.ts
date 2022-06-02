@@ -1,8 +1,7 @@
 // Modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 // Services
 import { GoogleGeocodeService } from './google-geocode/google-geocode.service';
 
@@ -14,6 +13,9 @@ import { GoogleGeocodeService } from './google-geocode/google-geocode.service';
   declarations: [
   ],
   exports: [
+  ],
+  providers: [
+    HttpClient,
   ]
 })
 export class ServicesModule { }
